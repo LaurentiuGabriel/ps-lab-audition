@@ -20,7 +20,7 @@ Run the following commands to provision the machine:
 
 ### Running the Lab locally
 To run this lab locally, you need a machine running any version of Ubuntu. After setting up the machine, perform the following steps:
-1. Run the `./sensitive-info.sh` scripton the target machine.
+1. Run the `./sensitive-info.sh` script on the target machine.
 2. Run the following commands on the target machine:
 ```
 apt-get update
