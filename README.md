@@ -4,7 +4,7 @@ In this lab we are leveraging Hydra's capabilities to launch a dictionary attack
 
 ## Prerequisites
 ### Running the Lab in the Cloud
-This lab is configured to use AWS as a Cloud provider.
+This lab is configured to use AWS as a Cloud provider. You would need the following:
 - Terraform needs to be installed.
 - An AWS account.
 The `main.tf` file needs to be changed as follows:
