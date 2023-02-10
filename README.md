@@ -46,7 +46,11 @@ iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 # Save the iptables rules
 /sbin/iptables-save
 ```
-
+### Setting up your computer
+You need to have a machine with a Linux-based OS installed. You can also use Windows Subsystem for Linux (WSL), in case you are on Windows. On your machine, you need to install Hydra. To do this, run the following command:
+```
+sudo apt-get install hydra-gtk
+```
 ## Learner Instructions
 You will need to follow along in the Lab Instructions we've provided in this repo. They should be run against the Ubuntu machine you have set up.
 
