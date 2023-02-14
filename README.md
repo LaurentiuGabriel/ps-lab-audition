@@ -4,7 +4,7 @@ In this lab we are leveraging Hydra's capabilities to launch a dictionary attack
 
 ## Prerequisites
 ### Running the Lab in the Cloud
-This lab is configured to use AWS as a Cloud provider.
+This lab is configured to use AWS as a Cloud provider. You would need the following:
 - Terraform needs to be installed.
 - An AWS account.
 The `main.tf` file needs to be changed as follows:
@@ -20,7 +20,7 @@ Run the following commands to provision the machine:
 
 ### Running the Lab locally
 To run this lab locally, you need a machine running any version of Ubuntu. After setting up the machine, perform the following steps:
-1. Run the `./sensitive-info.sh` scripton the target machine.
+1. Run the `./sensitive-info.sh` script on the target machine.
 2. Run the following commands on the target machine:
 ```
 apt-get update
@@ -46,7 +46,15 @@ iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 # Save the iptables rules
 /sbin/iptables-save
 ```
-
+### Setting up your Computer
+You need to have a machine with a Linux-based OS installed. You can also use Windows Subsystem for Linux (WSL), in case you are on Windows. On your machine, you need to install Hydra. To do this, run the following command:
+```
+sudo apt-get install hydra-gtk
+```
+On some Linux distributions, `sshpass` is not installed. You need this tool to be able to connect to the other machine. To install it, run the following command:
+```
+sudo apt-get install sshpass
+```
 ## Learner Instructions
 You will need to follow along in the Lab Instructions we've provided in this repo. They should be run against the Ubuntu machine you have set up.
 

