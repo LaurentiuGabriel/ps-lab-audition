@@ -19,8 +19,10 @@ On a Linux machine, open a terminal. Next, you need to do the following:
 6. With the purpose of analyzing the secrets file fetched from the Globomantics network, add the following command to copy the file to your machine:
 ```sshpass -p "${password}" scp "${username}@${host}:${secrets_file_path}" "${local_path}"```
 7. Launch the script.
+8. After running the script, open the file by running this command:
+```cat /tmp/sensitive-info.txt```
 
-And the result was successful. You managed to extract the following secrets:
+And the result should be successful. You should see something similar to the snippet below:
 
 ```
 Password: d683a51d
